@@ -21,10 +21,6 @@ you are forced to use self-signed certs, but browsers inherently don't trust the
 you need to enable trust on each system trying to use them. For 
 [OSX](https://support.apple.com/kb/PH18677?locale=en_US):
 
-If a certificate is not accepted, it may have expired or it may be invalid for the way 
-it’s being used. For example, some certificates may be used for establishing a secure 
-connection to a server but not for signing a document.
-
 The most common reason a certificate isn’t accepted is that the certificate authority’s 
 root certificate isn’t trusted by your computer. To have your computer trust a certificate 
 authority, you must add the certificate authority to a keychain and set the certificate 
@@ -43,9 +39,7 @@ file
 1. Click the "Always Trust" under "When using this certificate" and there will now be a
 blue plus in the lower left corner of the cert instead of a red x
 
-For more information, see Certificate trust policies.
-
-You are still stuck having to update these certs periodically which is a pain
+You are still stuck having to update these certs periodically which is a pain.
 
 ## Setup
 
@@ -55,7 +49,7 @@ an extra step and was not immediately obvious to me, so I figure I’d share my 
 
 [source](http://techglimpse.com/sha256-hash-certificate-openssl/)
 
-Step 1. Generate self signed Key and Cert using [`openssl`](https://www.openssl.org/docs/manmaster/apps/openssl.html)
+### Step 1. Generate self signed Key and Cert using [`openssl`](https://www.openssl.org/docs/manmaster/apps/openssl.html)
 
     openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
 
@@ -162,7 +156,7 @@ browsers will stop recognizing the old ones soon. To double check:
 			c8:8a:c3:e8
 
 
-Step 2. Create server file
+### Step 2. Create server file
 
 Copy the code bellow into a server.js file (or whatever you want to call it, and run it with 
     $ node server.js
