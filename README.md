@@ -47,9 +47,9 @@ I needed a simple server to test my HTTPS POST requests. Just like a regular HTT
 it is super easy to do in Node. Except I needed to add private key and a cert, which is 
 an extra step and was not immediately obvious to me, so I figure I’d share my findings.
 
-[source](http://techglimpse.com/sha256-hash-certificate-openssl/)
-
 ### Step 1. Generate self signed Key and Cert using [`openssl`](https://www.openssl.org/docs/manmaster/apps/openssl.html)
+
+Basically follow these [directions](http://techglimpse.com/sha256-hash-certificate-openssl/):
 
     openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
 
@@ -158,7 +158,9 @@ browsers will stop recognizing the old ones soon. To double check:
 
 ### Step 2. Create server file
 
-Copy the code bellow into a server.js file (or whatever you want to call it, and run it with 
+Copy the code bellow into a server.js file (or whatever you want to call it) and run it 
+with:
+ 
     $ node server.js
 
 server.js:
