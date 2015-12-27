@@ -6,6 +6,15 @@ Here is a compilation of info I found on the internet about doing HTTPS with Nod
 
 [Simple HTTPS Test Server Using Node.js](http://www.alexkras.com/simple-https-test-server-using-node-js/)
 
+## TL;DR
+
+    git clone https://github.com/walchko/https-example.git
+    cd https-example
+    openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
+    (answer inputs from openssl -- see details below)
+    npm install
+    node server.js
+
 ## Issues
 
 * Chrome pitches a fit when it sees a self signed cert. Need to fix this.
