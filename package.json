@@ -1,0 +1,19 @@
+{
+  "name": "https-server",
+  "version": "0.0.1",
+  "description": "test",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "https"
+  ],
+  "author": "kevin walchko",
+  "license": "MIT",
+  "dependencies": {
+    "https": "^1.0.0",
+    "querystring": "^0.2.0"
+  }
+}
